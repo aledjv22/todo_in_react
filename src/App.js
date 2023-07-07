@@ -6,25 +6,27 @@ import { Button } from './Button';
 import './App.css';
 import React from 'react';
 
-const defaultTodos = [
+const tasks = [
   { text: 'Cut onion', completed: true },
   { text: 'Take the React course', completed: false },
   { text: 'Cry with La Llorona', completed: false },
 ];
 
+const completedTasks = tasks.filter(task => task.completed).length;
+
 function App() {
   return (
     <>
       <h1 className='title'>To-Do List</h1>
-      <TodoCounter completed={16} total={25} />
+      <TodoCounter completed={completedTasks} total={tasks.length} />
       <TodoSearch/>
 
       <TodoList>
-        {defaultTodos.map(todo => 
+        {tasks.map(task => 
           <TodoItem 
-          key={todo.text} 
-          text={todo.text}
-          completed={todo.completed}/>
+          key={task.text} 
+          text={task.text}
+          completed={task.completed}/>
           )}
       </TodoList>
 
