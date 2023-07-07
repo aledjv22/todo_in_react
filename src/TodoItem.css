@@ -1,0 +1,35 @@
+.item{
+    list-style: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#approval_logo,
+#cancel_logo{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+
+#approval_logo{
+    margin-left: 10px;
+}
+
+.cancel_logo{
+    margin-right: 10px;
+}
+
+.item p{
+    margin: 0;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    background-color: #e1918e;
+    border-radius: 15px;
+    color: #f4f0e5;
+}

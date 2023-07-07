@@ -1,9 +1,13 @@
+import "./TodoItem.css"
+import cancel from "./icons/cancel.svg"
+import approval from "./icons/approval.svg"
+
 function TodoItem(props){
     return (
-      <li>
-        <span>V</span>
+      <li className="item">
+        <img src={cancel} alt='cancel logo' id='cancel_logo'/>
         <p>{props.text}</p>
-        <span>X</span>
+        <img src={approval} alt='approval logo' id='approval_logo'/>
       </li>
     );
 }
