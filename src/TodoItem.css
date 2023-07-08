@@ -5,14 +5,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #e1918e;
+    border-radius: 15px;
+    color: #f4f0e5;
+    /* margin: 0;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 5px;
+    padding-bottom: 3px; */
+    margin-top: 5px;
 }
 
 #approval_logo,
 #cancel_logo{
     width: 25px;
     height: 25px;
-    margin-bottom: 10px;
-    padding-top: 5px;
+    padding: 3px 3px 3px 3px;
 }
 
 #approval_logo{
@@ -25,11 +33,4 @@
 
 .item p{
     margin: 0;
-    padding-left: 7px;
-    padding-right: 7px;
-    padding-top: 5px;
-    padding-bottom: 3px;
-    background-color: #e1918e;
-    border-radius: 15px;
-    color: #f4f0e5;
 }

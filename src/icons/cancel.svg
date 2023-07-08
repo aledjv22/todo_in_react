@@ -1,3 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 128C300.8 128 128 300.8 128 512s172.8 384 384 384 384-172.8 384-384S723.2 128 512 128z m0 85.333333c66.133333 0 128 23.466667 179.2 59.733334L273.066667 691.2C236.8 640 213.333333 578.133333 213.333333 512c0-164.266667 134.4-298.666667 298.666667-298.666667z m0 597.333334c-66.133333 0-128-23.466667-179.2-59.733334l418.133333-418.133333C787.2 384 810.666667 445.866667 810.666667 512c0 164.266667-134.4 298.666667-298.666667 298.666667z" fill="#D50000" /></svg>
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.0001 2.84955C17.0538 2.84955 21.1506 6.94636 21.1506 12C21.1506 17.0537 17.0538 21.1505 12.0001 21.1505C6.94642 21.1505 2.84961 17.0537 2.84961 12C2.84961 6.94636 6.94642 2.84955 12.0001 2.84955Z" stroke="#1C1C1C" stroke-width="1.69904"/>
+<path d="M10.1597 10.1647L13.8301 13.8352" stroke="#DF1463" stroke-width="1.69904" stroke-linecap="round"/>
+<path d="M13.8301 10.1648L10.1596 13.8353" stroke="#DF1463" stroke-width="1.69904" stroke-linecap="round"/>
+</svg>
