@@ -26,10 +26,15 @@ function TodoItem(props){
       <li className="item">
         <img 
         src={isHovered2 ? cancel_active : cancel} 
-        alt='cancel logo' id='cancel_logo'
+        alt='cancel logo' 
+        id= 'cancel_logo'
         onMouseEnter={handleMouseEnter2}
         onMouseLeave={handleMouseLeave2}/>
-        <p>{props.text}</p>
+
+        <p id={`${isHovered ? 'finished_work' : 'task'}`}>
+          {props.text}
+        </p>
+        
         <img 
         src={isHovered ? approval_active : approval} 
         alt='approval logo' id='approval_logo' 
