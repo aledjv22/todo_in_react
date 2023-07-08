@@ -22,7 +22,16 @@ function TodoItem(props){
     setIsHovered2(false);
   };
 
-    return (
+  const [approvalId, setApprovalId] = useState('task');
+  const handleApprovalClick = () => {
+    if (approvalId === 'task') {
+      setApprovalId('finished_work');
+    }else{
+      setApprovalId('task');
+    }
+  };
+
+  return (
       <li className="item">
         <img 
         src={isHovered2 ? cancel_active : cancel} 
@@ -31,7 +40,7 @@ function TodoItem(props){
         onMouseEnter={handleMouseEnter2}
         onMouseLeave={handleMouseLeave2}/>
 
-        <p id={`${isHovered ? 'finished_work' : 'task'}`}>
+        <p id={approvalId}>
           {props.text}
         </p>
         
@@ -39,7 +48,8 @@ function TodoItem(props){
         src={isHovered ? approval_active : approval} 
         alt='approval logo' id='approval_logo' 
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}/>
+        onMouseLeave={handleMouseLeave}
+        onClick={handleApprovalClick}/>
       </li>
     );
 }
