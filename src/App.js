@@ -1,10 +1,10 @@
+import React, { useState } from 'react';
 import { TodoCounter } from './TodoCounter';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { Button } from './Button';
 import './App.css';
-import React, { useState } from 'react';
 
 const defaultTasks = [
   { text: 'Cut onion', completed: true },
@@ -14,30 +14,30 @@ const defaultTasks = [
 
 function App() {
   const [todos, setTodos] = useState(defaultTasks);
-  const [filteredTasks, setFilteredTasks] = useState([]);
 
-  const handleFilter = (filteredTasks) => {
-    setFilteredTasks(filteredTasks);
-  };
+  const [searchValue, setSearchValue] = useState('');
 
   const completedTasks = todos.filter(task => task.completed).length;
 
+  const searchedTasks = todos.filter(
+    (task) => {
+      const taskText = task.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+      return taskText.includes(searchText);
+    }
+    );
+    
   return (
     <>
       <h1 className='title'>To-Do List</h1>
       <TodoCounter completed={completedTasks} total={todos.length} />
       <TodoSearch
-        onFilter={handleFilter}
-        todos={todos}
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
       />
 
       <TodoList>
-        {filteredTasks.length > 0 ? filteredTasks.map(task => 
-          <TodoItem 
-          key={task.text} 
-          text={task.text}
-          completed={task.completed}/>
-          ) : todos.map(task => 
+      {searchedTasks.map(task => 
           <TodoItem 
           key={task.text} 
           text={task.text}

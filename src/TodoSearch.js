@@ -1,14 +1,12 @@
 import "./TodoSearch.css"
 
-function TodoSearch({ onFilter, todos }) {
-  const handleInputChange = (event) => {
-    const inputValue = event.target.value.toLowerCase();
-    const filteredTasks = todos.filter(task => task.text.toLowerCase().includes(inputValue));
-    onFilter(filteredTasks);
-  };
-
+function TodoSearch({searchValue, setSearchValue}) {
   return (
-    <input placeholder="Cut onion" id="search" onChange={handleInputChange} />
+    <input placeholder="Cut onion" id="search" value={searchValue} onChange={
+      (event) => {
+        setSearchValue(event.target.value);
+      }
+    }/>
   );
 }
 
