@@ -1,17 +1,15 @@
-import { useState } from 'react';
 import "./TodoSearch.css"
 
-function TodoSearch(){
-    const [isValue, setIsValue] = useState('');
-    const value = (event) => {
-        const element = event.target.value;
-        setIsValue(element);
-    }
-    console.log(isValue);
-    return (
-        <input placeholder="Cut onion" id="search" onChange={value}/>
-        
-    );
+function TodoSearch({ onFilter, todos }) {
+  const handleInputChange = (event) => {
+    const inputValue = event.target.value.toLowerCase();
+    const filteredTasks = todos.filter(task => task.text.toLowerCase().includes(inputValue));
+    onFilter(filteredTasks);
+  };
+
+  return (
+    <input placeholder="Cut onion" id="search" onChange={handleInputChange} />
+  );
 }
 
-export {TodoSearch};
+export { TodoSearch };
