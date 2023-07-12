@@ -26,6 +26,25 @@ function App() {
       return taskText.includes(searchText);
     }
     );
+
+  const handleClickComplete = (taskText) => {
+    const newTodos = todos.map(task => {
+      if (task.text === taskText) {
+        return {
+          ...task,
+          completed: !task.completed
+        };
+      }
+      return task;
+    });
+    setTodos(newTodos);
+  };
+
+  const handleDeleteClick = (taskText) => {
+    const newTodos = todos.filter(task => (task.text !== taskText));
+    setTodos(newTodos);
+  };
+
     
   return (
     <>
@@ -41,7 +60,10 @@ function App() {
           <TodoItem 
           key={task.text} 
           text={task.text}
-          completed={task.completed}/>
+          completed={task.completed}
+          onApprovalClick={handleClickComplete}
+          onDeleteClick={handleDeleteClick}
+          />
           )}
       </TodoList>
 

@@ -22,9 +22,12 @@ function TodoItem(props){
     setIsHovered2(false);
   };
 
-  const [isCompleted, setIsCompleted] = useState(props.completed);
-  const handleApprovalClick = () => {
-    setIsCompleted(!isCompleted);
+  const handleClickComplete = () => {
+    props.onApprovalClick(props.text);
+  };
+
+  const handleDeleteClick = () => {
+    props.onDeleteClick(props.text);
   };
 
   return (
@@ -34,18 +37,20 @@ function TodoItem(props){
         alt='cancel logo' 
         id= 'cancel_logo'
         onMouseEnter={handleMouseEnter2}
-        onMouseLeave={handleMouseLeave2}/>
+        onMouseLeave={handleMouseLeave2}
+        onClick={handleDeleteClick}
+        />
 
-        <p id={isCompleted ? 'finished_work' : 'task'}>
+        <p id={props.completed ? 'finished_work' : 'task'}>
           {props.text}
         </p>
         
         <img 
-        src={isCompleted ? approval_active : (isHovered ? approval_active : approval)} 
+        src={props.completed ? approval_active : (isHovered ? approval_active : approval)} 
         alt='approval logo' id='approval_logo' 
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onClick={handleApprovalClick}/>
+        onClick={handleClickComplete}/>
       </li>
     );
 }
