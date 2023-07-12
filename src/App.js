@@ -46,8 +46,18 @@ function App() {
     setTodos(newTodos);
   };
 
-  
-    
+  const handleAggregateTasks = (newTask) => {
+    const newTodos = todos.push(newTask);
+    setTodos(newTodos);
+  };
+
+  const [isStatus, setIsStatus] = useState(true);
+  const moreTasks = () => {
+    const status = document.querySelector('.add-task');
+    status.classList.toggle(true);
+    setIsStatus(status);
+  };
+
   return (
     <>
       <h1 className='title'>To-Do List</h1>
@@ -69,10 +79,13 @@ function App() {
           )}
       </TodoList>
 
-      <Button/>
+      <Button
+      onMoreTasks={moreTasks}
+      />
 
       <TodoAdd
-      status={`inactive`}
+      status={isStatus}
+      onAggregateTasks={handleAggregateTasks}
       />
     </>
   );
