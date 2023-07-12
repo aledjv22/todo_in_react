@@ -4,6 +4,7 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { Button } from './Button';
+import { TodoAdd } from './TodoAdd';
 import './App.css';
 
 const defaultTasks = [
@@ -45,6 +46,7 @@ function App() {
     setTodos(newTodos);
   };
 
+  
     
   return (
     <>
@@ -68,6 +70,10 @@ function App() {
       </TodoList>
 
       <Button/>
+
+      <TodoAdd
+      status={`inactive`}
+      />
     </>
   );
 }
