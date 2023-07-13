@@ -11,17 +11,20 @@ function TodoAdd(props){
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
+    
+    const handleAggregateTask = () => {
+        props.onAggregateTask();
+    };
+
     return (
         <div className={`add-task true`}> 
-            <input placeholder="Add task" id="add" value={props.addTask} onChange={
-                (event) => {
-                    props.setAddTask(event.target.value);
-                }
-            }/>
-            <button id="add_button" onClick={props.handleAddClick}>
-                <img id="approval_logo" src={isHovered ? approval_active : approval}
+            <input placeholder="Add task" id="add"/>
+            <button id="add_button">
+                <img id="approval_logo" alt='approval logo'
+                src={isHovered ? approval_active : approval}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                onClick={handleAggregateTask}
                 />
             </button>
         </div>

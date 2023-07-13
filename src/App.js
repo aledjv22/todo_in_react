@@ -7,14 +7,14 @@ import { Button } from './Button';
 import { TodoAdd } from './TodoAdd';
 import './App.css';
 
-const defaultTasks = [
-  { text: 'Cut onion', completed: true },
-  { text: 'Take the React course', completed: false },
-  { text: 'Cry with La Llorona', completed: false },
-];
+// const defaultTasks = [
+//   { text: 'Cut onion', completed: true },
+//   { text: 'Take the React course', completed: false },
+//   { text: 'Cry with La Llorona', completed: false },
+// ];
 
 function App() {
-  const [todos, setTodos] = useState(defaultTasks);
+  const [todos, setTodos] = useState([]);
 
   const [searchValue, setSearchValue] = useState('');
 
@@ -46,14 +46,25 @@ function App() {
     setTodos(newTodos);
   };
 
-  const handleAggregateTasks = (newTask) => {
-    const newTodos = todos.push(newTask);
-    setTodos(newTodos);
+  const handleAggregateTask = () => {
+    const add = document.getElementById("add").value;
+    let addTask = todos.filter(task => task.text.replace(/\s+/g, '').toLowerCase() === add.replace(/\s+/g, '').toLowerCase());
+    if(add.trim() !== '' && addTask.length === 0){
+      addTask = { text: add, completed: false };
+      const newTodos = [...todos, addTask];
+      setTodos(newTodos);
+      document.getElementById("add").value = '';
+    }else if (addTask.length > 0){
+      alert('Task already exists');
+    }else{
+      alert('Task can not be empty');
+    }
   };
 
   const moreTasks = () => {
     const status = document.querySelector('.add-task');
     status.classList.toggle(true);
+    document.getElementById("add").value = '';
   };
 
   return (
@@ -82,7 +93,8 @@ function App() {
       />
 
       <TodoAdd
-      onAggregateTasks={handleAggregateTasks}
+      todos = {todos}
+      onAggregateTask={handleAggregateTask}
       />
     </>
   );
