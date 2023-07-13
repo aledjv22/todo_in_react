@@ -12,7 +12,7 @@ function TodoAdd(props){
         setIsHovered(false);
     };
     return (
-        <div className={`add-task ${props.status}`}> 
+        <div className={`add-task true`}> 
             <input placeholder="Add task" id="add" value={props.addTask} onChange={
                 (event) => {
                     props.setAddTask(event.target.value);

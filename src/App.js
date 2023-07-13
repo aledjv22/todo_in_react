@@ -51,11 +51,9 @@ function App() {
     setTodos(newTodos);
   };
 
-  const [isStatus, setIsStatus] = useState(true);
   const moreTasks = () => {
     const status = document.querySelector('.add-task');
     status.classList.toggle(true);
-    setIsStatus(status);
   };
 
   return (
@@ -84,7 +82,6 @@ function App() {
       />
 
       <TodoAdd
-      status={isStatus}
       onAggregateTasks={handleAggregateTasks}
       />
     </>
