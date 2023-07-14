@@ -7,12 +7,6 @@ import { Button } from './Button';
 import { TodoAdd } from './TodoAdd';
 import './App.css';
 
-// const defaultTasks = [
-//   { text: 'Cut onion', completed: true },
-//   { text: 'Take the React course', completed: false },
-//   { text: 'Cry with La Llorona', completed: false },
-// ];
-
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -26,18 +20,12 @@ function App() {
       const searchText = searchValue.toLowerCase();
       return taskText.includes(searchText);
     }
-    );
+  );
 
   const handleClickComplete = (taskText) => {
-    const newTodos = todos.map(task => {
-      if (task.text === taskText) {
-        return {
-          ...task,
-          completed: !task.completed
-        };
-      }
-      return task;
-    });
+    const newTodos = [...todos];
+    const taskIndex = newTodos.findIndex(task => task.text === taskText);
+    newTodos[taskIndex].completed = !newTodos[taskIndex].completed;
     setTodos(newTodos);
   };
 
@@ -54,7 +42,7 @@ function App() {
       const newTodos = [...todos, addTask];
       setTodos(newTodos);
       document.getElementById("add").value = '';
-    }else if (addTask.length > 0){
+    }else if (addTask.length > 0 ){
       alert('Task already exists');
     }else{
       alert('Task can not be empty');
@@ -70,7 +58,10 @@ function App() {
   return (
     <>
       <h1 className='title'>To-Do List</h1>
-      <TodoCounter completed={completedTasks} total={todos.length} />
+      <TodoCounter 
+      completed={completedTasks} 
+      total={todos.length}
+      />
       <TodoSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}
