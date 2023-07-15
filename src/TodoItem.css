@@ -11,20 +11,20 @@
     margin-top: 5px;
 }
 
-#approval_logo_active,
-#approval_logo,
-#cancel_logo{
+#approval_icon_active,
+#approval_icon,
+#delate_icon{
     width: 25px;
     height: 25px;
     padding: 3px 3px 3px 3px;
 }
 
-#approval_logo_active,
-#approval_logo{
+#approval_icon_active,
+#approval_icon{
     margin-left: 10px;
 }
 
-.cancel_logo{
+.delate_icon{
     margin-right: 10px;
 }
 

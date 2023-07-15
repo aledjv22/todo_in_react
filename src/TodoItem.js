@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { ApprovalIcon } from './ApprovalIcon';
+import { DelateIcon } from './DelateIcon';
 import "./TodoItem.css"
-import cancel from "./icons/cancel.svg"
+import delate from "./icons/delate.svg"
 import approval from "./icons/approval.svg"
-import cancel_active from "./icons/cancel_active.svg"
+import delate_active from "./icons/delate_active.svg"
 import approval_active from "./icons/approval_active.svg"
 
 function TodoItem(props){
@@ -26,25 +28,27 @@ function TodoItem(props){
 
   return (
       <li className="item">
-        <img 
-        src={isHovered2 ? cancel_active : cancel} 
-        alt='cancel logo' 
-        id= 'cancel_logo'
+        <ApprovalIcon />
+        {/* <img 
+        src={isHovered2 ? delate_active : delate} 
+        alt='delate icon' 
+        id= 'delate_icon'
         onMouseEnter={handleMouse2}
         onMouseLeave={handleMouse2}
         onClick={handleDeleteClick}
-        />
+        /> */}
 
         <p id={props.completed ? 'finished_work' : 'task'}>
           {props.text}
         </p>
         
-        <img 
+        {/* <img 
         src={props.completed ? approval_active : (isHovered ? approval_active : approval)} 
-        alt='approval logo' id='approval_logo' 
+        alt='approval icon' id='approval_icon' 
         onMouseEnter={handleMouse}
         onMouseLeave={handleMouse}
-        onClick={handleClickComplete}/>
+        onClick={handleClickComplete}/> */}
+        <DelateIcon />
       </li>
     );
 }

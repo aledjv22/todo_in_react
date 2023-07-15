@@ -20,7 +20,7 @@ function TodoAdd(props){
         <div className={`add-task true`}> 
             <input placeholder="Add task" id="add"/>
             <button id="add_button">
-                <img id="approval_logo" alt='approval logo'
+                <img id="approval_icon" alt='approval icon'
                 src={isHovered ? approval_active : approval}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
