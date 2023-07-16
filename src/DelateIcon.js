@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { TodoIcon } from './TodoIcon';
+import React from 'react';
+import './DelateIcon.css';
+import { CiCircleRemove } from "react-icons/ci";
 
-function DelateIcon(props){
+function DelateIcon(){
     return (
-        <TodoIcon 
-        type='delate'
-        color='red'
-        />
+        <CiCircleRemove className='delate_icon'/>
     );
 }
 

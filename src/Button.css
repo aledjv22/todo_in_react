@@ -1,13 +1,19 @@
 .add-button{
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     background-color: transparent;
     border-style: none;
 }
-.add-button img{
+.add-button svg{
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    color: #e1918e;
+    stroke-width: 0.7px;
+}
+
+.add-button svg:hover{
+    color: #6aea6a;
 }

@@ -11,16 +11,13 @@
     margin-top: 5px;
 }
 
-#approval_icon_active,
-#approval_icon,
-#delate_icon{
+.delate_icon,
+.approval_icon{
     width: 25px;
     height: 25px;
-    padding: 3px 3px 3px 3px;
 }
 
-#approval_icon_active,
-#approval_icon{
+.approval_icon{
     margin-left: 10px;
 }
 
@@ -35,4 +32,9 @@
 #finished_work{
     margin: 0;
     text-decoration: line-through;
+}
+
+.item div{
+    display: flex;
+    align-items: center;
 }

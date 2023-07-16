@@ -1,16 +1,8 @@
-import { useState } from 'react';
+import React from 'react';
+import { CiCirclePlus } from "react-icons/ci";
 import './Button.css'
-import add from "./icons/add.svg"
-import add_active from "./icons/add_active.svg"
 
 function Button(props){
-    const [isHovered, setIsHovered] = useState(false);
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
 
     const moreTasks = () => {
         props.onMoreTasks();
@@ -18,15 +10,8 @@ function Button(props){
 
 
     return (
-        <button className="add-button"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        >
-            <img 
-            src={isHovered ? add_active : add}
-            alt="add to-do"
-            onClick={moreTasks}
-            />  
+        <button className="add-button" onClick={moreTasks}>
+            <CiCirclePlus />
         </button>
     );
 }

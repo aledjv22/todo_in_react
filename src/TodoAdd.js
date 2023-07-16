@@ -1,17 +1,8 @@
-import { useState } from "react";
+import React from "react";
 import "./TodoAdd.css"
-import approval from "./icons/approval.svg"
-import approval_active from "./icons/approval_active.svg"
+import { ApprovalIcon } from "./ApprovalIcon";
 
 function TodoAdd(props){
-    const [isHovered, setIsHovered] = useState(false);
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
-    
     const handleAggregateTask = () => {
         props.onAggregateTask();
     };
@@ -20,12 +11,9 @@ function TodoAdd(props){
         <div className={`add-task true`}> 
             <input placeholder="Add task" id="add"/>
             <button id="add_button">
-                <img id="approval_icon" alt='approval icon'
-                src={isHovered ? approval_active : approval}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={handleAggregateTask}
-                />
+                <div onClick={handleAggregateTask}>
+                    <ApprovalIcon />
+                </div>
             </button>
         </div>
     );

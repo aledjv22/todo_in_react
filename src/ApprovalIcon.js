@@ -1,12 +1,10 @@
 import React from 'react';
-import { TodoIcon } from './TodoIcon';
+import './ApprovalIcon.css';
+import { CiCircleCheck } from "react-icons/ci";
 
-function ApprovalIcon(props){
+function ApprovalIcon(){
     return (
-        <TodoIcon 
-        type='check'
-        color='green'
-        />
+        <CiCircleCheck className='approval_icon' />
     );
 }
 
