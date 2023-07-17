@@ -8,7 +8,17 @@ import { TodoAdd } from './TodoAdd';
 import './App.css';
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const localStorageTodos = localStorage.getItem('TODOS_V1');
+  let parsedTodos;
+
+  if (!localStorageTodos) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+  const [todos, setTodos] = useState(parsedTodos);
 
   const [searchValue, setSearchValue] = useState('');
 
@@ -26,12 +36,12 @@ function App() {
     const newTodos = [...todos];
     const taskIndex = newTodos.findIndex(task => task.text === taskText);
     newTodos[taskIndex].completed = !newTodos[taskIndex].completed;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   const handleDeleteClick = (taskText) => {
     const newTodos = todos.filter(task => (task.text !== taskText));
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   const handleAggregateTask = () => {
@@ -40,7 +50,7 @@ function App() {
     if(add.trim() !== '' && addTask.length === 0){
       addTask = { text: add, completed: false };
       const newTodos = [...todos, addTask];
-      setTodos(newTodos);
+      saveTodos(newTodos);
       document.getElementById("add").value = '';
     }else if (addTask.length > 0 ){
       alert('Task already exists');
@@ -53,6 +63,12 @@ function App() {
     const status = document.querySelector('.add-task');
     status.classList.toggle(true);
     document.getElementById("add").value = '';
+  };
+
+  const saveTodos = (newTodos) => {
+    const stringifiedTodos = JSON.stringify(newTodos);
+    localStorage.setItem('TODOS_V1', stringifiedTodos);
+    setTodos(newTodos);
   };
 
   return (
