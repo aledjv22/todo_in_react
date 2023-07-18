@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import { TodoCounter } from '../TodoCounter';
-import { TodoSearch } from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoItem } from '../TodoItem';
-import { Button } from '../TodoAdd/Button';
-import { TodoAdd } from '../TodoAdd';
+import { AppUI } from './AppUI';
 import { useLocalStorage } from './useLocalStorage';
 function App() {
   const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
@@ -55,38 +50,17 @@ function App() {
   };
 
   return (
-    <>
-      <h1 className='title'>To-Do List</h1>
-      <TodoCounter 
-      completed={completedTasks} 
-      total={todos.length}
-      />
-      <TodoSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-
-      <TodoList>
-      {searchedTasks.map(task => 
-          <TodoItem 
-          key={task.text} 
-          text={task.text}
-          completed={task.completed}
-          onApprovalClick={handleClickComplete}
-          onDeleteClick={handleDeleteClick}
-          />
-          )}
-      </TodoList>
-
-      <Button
-      onMoreTasks={moreTasks}
-      />
-
-      <TodoAdd
-      todos = {todos}
-      onAggregateTask={handleAggregateTask}
-      />
-    </>
+    <AppUI
+        completedTasks = {completedTasks}
+        todos = {todos}
+        searchValue = {searchValue}
+        setSearchValue = {setSearchValue}
+        handleClickComplete = {handleClickComplete}
+        handleDeleteClick = {handleDeleteClick}
+        handleAggregateTask = {handleAggregateTask}
+        moreTasks = {moreTasks}
+        searchedTasks = {searchedTasks}
+    />
   );
 }
 
