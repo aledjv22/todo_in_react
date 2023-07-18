@@ -3,9 +3,8 @@ import { TodoCounter } from './TodoCounter';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
-import { Button } from './Button';
+import { Button } from './TodoAdd/Button';
 import { TodoAdd } from './TodoAdd';
-import './App.css';
 
 function useLocalStorage(itemName, initialValue){
   const localStorageItem = localStorage.getItem(itemName);

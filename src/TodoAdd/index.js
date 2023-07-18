@@ -1,6 +1,6 @@
 import React from "react";
 import "./TodoAdd.css"
-import { ApprovalIcon } from "./ApprovalIcon";
+import { ApprovalIcon } from "../TodoItem/ApprovalIcon";
 
 function TodoAdd(props){
     const handleAggregateTask = () => {
