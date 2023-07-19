@@ -1,3 +1,4 @@
+import React from 'react';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
@@ -6,35 +7,27 @@ import { Button } from '../TodoAdd/Button';
 import { TodoAdd } from '../TodoAdd';
 import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
+import { TodoContext } from '../TodoContext';
 
-function AppUI({
-    loading,
-    error,
-    completedTasks,
-    todos,
-    searchValue,
-    setSearchValue,
-    handleClickComplete,
-    handleDeleteClick,
-    handleAggregateTask,
-    moreTasks,
-    searchedTasks
-}){
+function AppUI(){
+    const {
+        loading,
+        error,
+        searchedTasks,
+        handleClickComplete,
+        handleDeleteClick,     
+        moreTasks,  
+        handleAggregateTask,
+    } = React.useContext(TodoContext);
     return (
         <>
         <h1 className='title'>To-Do List</h1>
-        <TodoCounter 
-        completed={completedTasks} 
-        total={todos.length}
-        empty={todos.length===0}
-        loading={loading}
-        />
-        {!loading && <TodoSearch
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-        />}
+        <TodoCounter/>
+        {!loading && <TodoSearch/>}
 
         <TodoList>
+            {loading && <TodosLoading/>}
+            {loading && <TodosLoading/>}
             {loading && <TodosLoading/>}
             {error && <TodosError/>}
 
@@ -46,15 +39,13 @@ function AppUI({
                 onApprovalClick={handleClickComplete}
                 onDeleteClick={handleDeleteClick}
                 />
-                )}
+            )}
         </TodoList>
-
         {!loading && <Button
         onMoreTasks={moreTasks}
         />}
 
         <TodoAdd
-        todos = {todos}
         onAggregateTask={handleAggregateTask}
         />
         </>
