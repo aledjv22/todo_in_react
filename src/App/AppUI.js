@@ -4,6 +4,8 @@ import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { Button } from '../TodoAdd/Button';
 import { TodoAdd } from '../TodoAdd';
+import { TodosLoading } from '../TodosLoading';
+import { TodosError } from '../TodosError';
 
 function AppUI({
     loading,
@@ -24,16 +26,17 @@ function AppUI({
         <TodoCounter 
         completed={completedTasks} 
         total={todos.length}
+        empty={todos.length===0}
+        loading={loading}
         />
-        <TodoSearch
+        {!loading && <TodoSearch
             searchValue={searchValue}
             setSearchValue={setSearchValue}
-        />
+        />}
 
         <TodoList>
-            {loading && <p>Loading...</p>}
-            {error && <p>An error has occurred...</p>}
-            {(!loading && searchedTasks.length===0) && <p>There are no tasks</p>}
+            {loading && <TodosLoading/>}
+            {error && <TodosError/>}
 
             {searchedTasks.map(task => 
                 <TodoItem 
@@ -46,9 +49,9 @@ function AppUI({
                 )}
         </TodoList>
 
-        <Button
+        {!loading && <Button
         onMoreTasks={moreTasks}
-        />
+        />}
 
         <TodoAdd
         todos = {todos}

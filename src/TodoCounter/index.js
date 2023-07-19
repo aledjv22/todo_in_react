@@ -1,14 +1,14 @@
 import "./TodoCounter.css"
 
-function TodoCounter({ total, completed }){
+function TodoCounter({ total, completed, empty, loading}){
     return (
-      total === completed ?
       <h2 className="state">
-        You have completed all your TO-DOs
-      </h2>
-      :
-      <h2 className="state">
-        You have completed {completed} of {total} TO-DOs
+        {
+          loading?"Loading...":
+          empty? "There are no tasks to show":
+          total === completed ? "You have completed all your TO-DOs":
+          `You have completed ${completed} of ${total} TO-DOs`
+        }
       </h2>
     );
 }

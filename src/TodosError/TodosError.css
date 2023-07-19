@@ -1,0 +1,18 @@
+.error-message{
+    list-style: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e1918e;
+    border-radius: 15px;
+    color: #f4f0e5;
+    margin-top: 5px;
+}
+
+.error-message p{
+    margin:0;
+    margin: 4px;
+    font-weight: bold;
+}

@@ -1,0 +1,51 @@
+.loading{
+    padding: 0;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
+.loading li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e1918e;
+    border-radius: 15px;
+    color: #f4f0e5;
+    margin-top: 5px;
+    height: 25px;
+    width: 200px;
+}
+
+.first_circle,
+.second_circle{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.first_circle{
+    margin-left: 5px;
+    background-color: #f2bcbb;
+    animation: first 1.5s;
+    animation-iteration-count: 10;
+}
+
+.second_circle{
+    margin-right: 5px;
+    background-color: #f2bcbb;
+    animation: second 1.5s;
+    animation-iteration-count: 10;
+}
+
+@keyframes first{
+    50%{
+        transform: translateX(175px);
+    }
+}
+
+@keyframes second{
+    50%{
+        transform: translateX(-175px);
+    }
+}
