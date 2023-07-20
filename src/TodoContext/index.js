@@ -11,6 +11,8 @@ function TodoProvider({ children }){
         error
     } = useLocalStorage('TODOS_V1', []);
 
+    const [openModal, setOpenModal] = useState(false);
+
     const [searchValue, setSearchValue] = useState('');
 
     const completedTasks = todos.filter(task => task.completed).length;
@@ -35,19 +37,25 @@ function TodoProvider({ children }){
     saveTodos(newTodos);
     };
 
+    const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({ text, completed: false });
+    saveTodos(newTodos);
+    };
+
     const handleAggregateTask = () => {
-    const add = document.getElementById("add").value;
-    let addTask = todos.filter(task => task.text.replace(/\s+/g, '').toLowerCase() === add.replace(/\s+/g, '').toLowerCase());
-    if(add.trim() !== '' && addTask.length === 0){
-        addTask = { text: add, completed: false };
-        const newTodos = [...todos, addTask];
-        saveTodos(newTodos);
-        document.getElementById("add").value = '';
-    }else if (addTask.length > 0 ){
-        alert('Task already exists');
-    }else{
-        alert('Task can not be empty');
-    }
+        const add = document.getElementById("add").value;
+        let addTask = todos.filter(task => task.text.replace(/\s+/g, '').toLowerCase() === add.replace(/\s+/g, '').toLowerCase());
+        if(add.trim() !== '' && addTask.length === 0){
+            addTask = { text: add, completed: false };
+            const newTodos = [...todos, addTask];
+            saveTodos(newTodos);
+            document.getElementById("add").value = '';
+        }else if (addTask.length > 0 ){
+            alert('Task already exists');
+        }else{
+            alert('Task can not be empty');
+        }
     };
 
     const moreTasks = () => {
@@ -67,7 +75,10 @@ function TodoProvider({ children }){
             handleDeleteClick,
             handleAggregateTask,
             moreTasks,
-            searchedTasks
+            searchedTasks,
+            openModal,
+            setOpenModal,
+            addTodo,
         }}>
             {children}
         </TodoContext.Provider>

@@ -8,6 +8,8 @@ import { TodoAdd } from '../TodoAdd';
 import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { TodoContext } from '../TodoContext';
+import { Modal } from '../Modal';
+import { TodoForm } from '../TodoForm';
 
 function AppUI(){
     const {
@@ -18,6 +20,8 @@ function AppUI(){
         handleDeleteClick,     
         moreTasks,  
         handleAggregateTask,
+        openModal,
+        setOpenModal,
     } = React.useContext(TodoContext);
     return (
         <>
@@ -41,13 +45,20 @@ function AppUI(){
                 />
             )}
         </TodoList>
+
         {!loading && <Button
         onMoreTasks={moreTasks}
         />}
 
-        <TodoAdd
+        {/* <TodoAdd
         onAggregateTask={handleAggregateTask}
-        />
+        /> */}
+
+        {openModal && (
+            <Modal>
+                <TodoForm/>
+            </Modal>
+        )}
         </>
     );
 }
