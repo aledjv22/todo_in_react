@@ -1,20 +1,21 @@
 .item{
     list-style: none;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
+    font-size: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #e1918e;
-    border-radius: 15px;
+    border-radius: 25px;
     color: #f4f0e5;
     margin-top: 5px;
+    height: 50px;
 }
 
 .delate_icon,
 .approval_icon{
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
 }
 
 .approval_icon{
@@ -40,7 +41,7 @@
 }
 
 .text-overflow {
-    max-width: 300px;
+    max-width: 600px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

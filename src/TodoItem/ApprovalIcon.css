@@ -2,6 +2,7 @@
     color: #e15e6e;
     stroke-width: 1px;
 }
-.approval_icon:hover{
+.approval_icon:hover,
+.approval_icon:active{
     color: #6aea6a;
 }

@@ -3,6 +3,7 @@
     stroke-width: 1px;
 }
 
-.delate_icon:hover{
+.delate_icon:hover
+.delate_icon:active{
     color: #ff261b;
 }

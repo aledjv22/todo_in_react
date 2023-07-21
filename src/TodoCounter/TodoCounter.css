@@ -1,8 +1,9 @@
 .title{
     color: #e0c4ae;
     font-family: 'Fasthand', cursive;
-    font-size: 50px;
+    font-size: 120px;
     margin: 0;
+    height: 180px;
 }
 
 .state{
@@ -10,4 +11,5 @@
     font-family: 'Lobster', cursive;
     margin-bottom: 10px;
     margin-top: 0;
+    font-size: 45px;
 }

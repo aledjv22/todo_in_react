@@ -1,6 +1,6 @@
 .add-button{
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     padding: 0;
     background-color: transparent;
     border-style: none;
@@ -14,6 +14,7 @@
     stroke-width: 0.7px;
 }
 
-.add-button svg:hover{
+.add-button svg:hover,
+.add-button svg:active{
     color: #6aea6a;
 }
