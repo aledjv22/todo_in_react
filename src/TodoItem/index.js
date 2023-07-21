@@ -18,7 +18,7 @@ function TodoItem(props){
           <DelateIcon />
         </div>
         
-        <p id={props.completed ? 'finished_work' : 'task'}>
+        <p id={props.completed ? 'finished_work' : 'task'} className="text-overflow">
           {props.text}
         </p>
         

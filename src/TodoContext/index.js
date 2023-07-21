@@ -37,20 +37,13 @@ function TodoProvider({ children }){
     saveTodos(newTodos);
     };
 
-    const addTodo = (text) => {
-    const newTodos = [...todos];
-    newTodos.push({ text, completed: false });
-    saveTodos(newTodos);
-    };
-
-    const handleAggregateTask = () => {
-        const add = document.getElementById("add").value;
-        let addTask = todos.filter(task => task.text.replace(/\s+/g, '').toLowerCase() === add.replace(/\s+/g, '').toLowerCase());
-        if(add.trim() !== '' && addTask.length === 0){
-            addTask = { text: add, completed: false };
+    const addTodo = (newTask) => {
+        let addTask = todos.filter(task => task.text.replace(/\s+/g, '').toLowerCase() === newTask.replace(/\s+/g, '').toLowerCase());
+        if(newTask.trim() !== '' && addTask.length === 0){
+            addTask = { text: newTask, completed: false };
             const newTodos = [...todos, addTask];
             saveTodos(newTodos);
-            document.getElementById("add").value = '';
+            document.getElementById("newTask").value = '';
         }else if (addTask.length > 0 ){
             alert('Task already exists');
         }else{
@@ -58,11 +51,6 @@ function TodoProvider({ children }){
         }
     };
 
-    const moreTasks = () => {
-    const status = document.querySelector('.add-task');
-    status.classList.toggle(true);
-    document.getElementById("add").value = '';
-    };
     return (
         <TodoContext.Provider value={{
             loading,
@@ -73,8 +61,6 @@ function TodoProvider({ children }){
             setSearchValue,
             handleClickComplete,
             handleDeleteClick,
-            handleAggregateTask,
-            moreTasks,
             searchedTasks,
             openModal,
             setOpenModal,

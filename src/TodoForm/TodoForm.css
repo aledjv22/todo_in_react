@@ -1,47 +1,51 @@
 form{
     width: 90%;
-    max-width: 300px;
-    background-color: #fff;
-    padding: 33px 40px;
+    max-width: 250px;
+    background-color: #e1918e;
+    padding: 15px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 25px;
 }
 
 label{
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    color: #1E1E1F;
-    margin-bottom: 26px;
+    color: #f4f0e5;
+    font-family: 'Lobster', cursive;
+    margin-bottom: 5px;
 }
 
 textarea{
-    background-color: #f9fbfc;
-    border: 2px solid #202329;
-    border-radius: 2px;
-    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
-    color: #1E1E1F;
+    background-color: #ed707e;
+    border: 2px solid #e15e6e;
+    font-size: 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #f4f0e5;
     font-size: 20px;
     text-align: center;
-    padding: 12px;
-    height: 96px;
-    width: calc(100% - 25px);
+    padding: 5px;
+    height: 76px;
+    width: calc(100% - 15px);
 }
 
 textarea::placeholder{
-    color: #a5a5a5;
+    color: #e0c4ae;
     font-family: 'Montserrat';
     font-weight: 400;
+    font-weight: bold;
 }
 
 textarea:focus{
-    outline-color: #61dafa;
+    outline-color: #c3e6d4;
 }
 
 .TodoForm-buttonContainer{
-    margin-top: 14px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,18 +58,44 @@ textarea:focus{
     font-size: 20px;
     color: #202329;
     font-weight: 400;
-    width: 120px;
-    height: 48px;
-    border-radius: 2px;
+    width: calc(45% - 15px);
+    height: 30px;
+    border-radius: 10px;
     border:none;
     font-family: 'Montserrat';
 }
 
 .TodoForm-button--add{
-    background-color: #61dafa;
-    box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+    background-color: #e15e6e;
+    border: 2px solid #e15e6e;
+    color: #e1918e;
+    font-weight: bold;
+}
+
+.TodoForm-button--add:hover{
+    background-color: #6aea6a;
+    border: none;
+    color: #202329;
+    box-shadow: 0px 0px 15px rgba(97, 250, 97, 0.9);
 }
 
 .TodoForm-button--cancel{
-    background: transparent;
+    background-color: #e15e6e;
+    border: 2px solid #e15e6e;
+    color: #e1918e;
+    font-weight: bold;
+}
+
+.TodoForm-button--cancel:hover{
+    background-color: #ff261b;
+    border: none;
+    color: #202329;
+    box-shadow: 0px 0px 15px rgba(255, 38, 27, 0.9);
+}
+
+.Modal{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -3,8 +3,7 @@ import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
-import { Button } from '../TodoAdd/Button';
-import { TodoAdd } from '../TodoAdd';
+import { Button } from '../TodoButton';
 import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { TodoContext } from '../TodoContext';
@@ -17,11 +16,8 @@ function AppUI(){
         error,
         searchedTasks,
         handleClickComplete,
-        handleDeleteClick,     
-        moreTasks,  
-        handleAggregateTask,
+        handleDeleteClick,
         openModal,
-        setOpenModal,
     } = React.useContext(TodoContext);
     return (
         <>
@@ -46,13 +42,7 @@ function AppUI(){
             )}
         </TodoList>
 
-        {!loading && <Button
-        onMoreTasks={moreTasks}
-        />}
-
-        {/* <TodoAdd
-        onAggregateTask={handleAggregateTask}
-        /> */}
+        {!loading && <Button/>}
 
         {openModal && (
             <Modal>

@@ -5,6 +5,7 @@ import './TodoForm.css';
 function TodoForm() {
     const {
         addTodo,
+        openModal,
         setOpenModal,
     } = React.useContext(TodoContext);
 
@@ -12,12 +13,12 @@ function TodoForm() {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        setOpenModal(false);
+        setOpenModal(!openModal);
         addTodo(newTodoValue);
     };
 
     const onCalcel = () => {
-        setOpenModal(false);
+        setOpenModal(!openModal);
     };
 
     const onChange = (event) => {
@@ -32,6 +33,7 @@ function TodoForm() {
                 value={newTodoValue}
                 onChange={onChange}
                 type="text"
+                id="newTask"
             />
             <div className="TodoForm-buttonContainer">
                 <button
@@ -41,8 +43,8 @@ function TodoForm() {
                 >Cancel</button>
                 <button 
                 type="submit"
-                    className="TodoForm-button TodoForm-button--add"
-                >Add Task</button>
+                className="TodoForm-button TodoForm-button--add"
+                >Add</button>
             </div>
         </form>
     );
