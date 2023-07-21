@@ -2,7 +2,7 @@
     padding: 0;
     margin-bottom: 5px;
     margin-top: 5px;
-    width: 200px;
+    width: 500px;
 }
 .loading li{
     list-style: none;
@@ -10,17 +10,16 @@
     justify-content: space-between;
     align-items: center;
     background-color: #e1918e;
-    border-radius: 15px;
+    border-radius: 35px;
     color: #f4f0e5;
-    margin-top: 5px;
-    height: 25px;
-    width: 200px;
+    margin-top: 10px;
+    height: 60px;
 }
 
 .first_circle,
 .second_circle{
-    width: 18px;
-    height: 18px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
@@ -40,12 +39,12 @@
 
 @keyframes first{
     50%{
-        transform: translateX(175px);
+        transform: translateX(438px);
     }
 }
 
 @keyframes second{
     50%{
-        transform: translateX(-175px);
+        transform: translateX(-438px);
     }
 }
