@@ -16,3 +16,9 @@
     margin: 4px;
     font-weight: bold;
 }
+
+@media (max-width: 768px){
+    .error-message{
+        font-size: 30px;
+    }
+}

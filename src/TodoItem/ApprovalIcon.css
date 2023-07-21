@@ -2,7 +2,16 @@
     color: #e15e6e;
     stroke-width: 1px;
 }
-.approval_icon:hover,
 .approval_icon:active{
     color: #6aea6a;
+}
+
+@media (min-width: 768px) {
+    .approval_icon{
+        color: #e15e6e;
+        stroke-width: 1px;
+    }
+    .approval_icon:hover{
+        color: #6aea6a;
+    }
 }

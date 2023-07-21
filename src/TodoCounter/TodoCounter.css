@@ -13,3 +13,14 @@
     margin-top: 0;
     font-size: 45px;
 }
+
+
+@media (max-width: 768px){
+    .title{
+        font-size: 50px;
+        height: 90px;
+    }
+    .state{
+        font-size: 25px;
+    }
+}

@@ -10,3 +10,11 @@
     font-size: 30px;
     color: #39423e;
 }
+
+@media (max-width: 768px){
+    #search{
+        width: 250px;
+        height: 25px;
+        font-size: 20px;
+    }
+}

@@ -46,3 +46,24 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+@media (max-width: 768px){
+    .item{
+        font-size: 20px;
+        height: 25px;
+    }
+
+    .text-overflow {
+        max-width: 290px;
+    }
+
+    .delate_icon,
+    .approval_icon{
+        width: 25px;
+        height: 25px;
+    }
+
+    .text-overflow {
+        max-width: 300px;
+    }
+}

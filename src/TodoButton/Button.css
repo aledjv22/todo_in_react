@@ -18,3 +18,10 @@
 .add-button svg:active{
     color: #6aea6a;
 }
+
+@media (max-width: 768px){
+    .add-button{
+        width: 30px;
+        height: 30px;
+    }
+}

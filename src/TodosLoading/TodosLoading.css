@@ -4,6 +4,7 @@
     margin-top: 5px;
     width: 500px;
 }
+
 .loading li{
     list-style: none;
     display: flex;
@@ -46,5 +47,34 @@
 @keyframes second{
     50%{
         transform: translateX(-438px);
+    }
+}
+
+@media (max-width: 768px){
+    .loading{
+        width: 300px;
+    }
+
+    .loading li{
+        border-radius: 35px;
+        height: 50px;
+    }
+
+    .first_circle,
+    .second_circle{
+        width: 45px;
+        height: 45px;
+    }
+
+    @keyframes first{
+        50%{
+            transform: translateX(245px);
+        }
+    }
+    
+    @keyframes second{
+        50%{
+            transform: translateX(-245px);
+        }
     }
 }
