@@ -8,7 +8,7 @@ function TodoSearch() {
     setSearchValue 
   } = React.useContext(TodoContext);
   return (
-    <input placeholder="Cut onion" id="search" value={searchValue} onChange={
+    <input placeholder="Task finder" id="search" value={searchValue} onChange={
       (event) => {
         setSearchValue(event.target.value);
       }
